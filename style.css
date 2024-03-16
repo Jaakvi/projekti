@@ -1,0 +1,494 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+html {
+  background: url("taustakuva4.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 16px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.registerbutton {
+  float: right;
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 0.6em 1.2em;
+  margin: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 0.6em 1.2em;
+  margin: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+h3 {
+  border-top: 1px solid black;
+  margin-top: 50px;
+  padding-top: 10px;
+}
+
+button.del,
+button.check,
+button.update {
+  padding: 0.3rem 0.6rem;
+  margin: 0;
+}
+
+button.update {
+  background-color: #f2e49448;
+}
+
+button.check {
+  border: 1px solid #000000;
+}
+
+button.del {
+  border: 1px solid #000000;
+  background-color: #f2a29448;
+}
+
+::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    rgb(44, 44, 44),
+    rgb(44, 44, 44),
+    rgb(88, 88, 88),
+    rgb(88, 88, 88)
+  );
+  opacity: 0.75;
+}
+
+.registerbox {
+  border-radius: 8px;
+  background-color: rgb(138, 76, 67);
+}
+.loginbox {
+  border-radius: 8px;
+  background-color: rgb(138, 76, 67);
+}
+
+/* Navigaatiolista tyylittely */
+ul {
+  border-radius: 8px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #551b13;
+}
+
+li {
+  float: left;
+}
+
+li p {
+  display: block;
+  font-size: larger;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 0px 16px;
+  text-decoration: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #c83d3d;
+}
+
+.active {
+  background-color: black;
+}
+
+/* Käyttäjä loggaantunut tyylittely */
+.user {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#name {
+  font-size: large;
+  font-weight: bolder;
+}
+
+img {
+  max-width: 100%;
+  height: 500px; /* Automaattinen korkeus säilyttää kuvan alkuperäisen suhteen */
+  display: block; /* Estää kuvan sivusuuntaisen tilan varauksen */
+  margin: 0 auto; /* Keskitä kuva sivulle */
+}
+
+/* Taulukon tyylittey */
+/* https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l */
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  border-radius: 8px;
+  background-color: #551b13;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #000000;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #000000;
+}
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #68535358;
+  cursor: pointer;
+}
+.forms {
+  display: flex;
+  gap: 30px;
+}
+
+.login_form {
+  border-radius: 8px;
+  background-color: #551b13;
+  color: #ffffff;
+  padding: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  width: 300px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.create_user_form {
+  border-radius: 8px;
+  background-color: #551b13;
+  color: #ffffff;
+  padding: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  width: 300px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.loginuser {
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 5px;
+  padding: 8px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.createuser {
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 5px;
+  padding: 8px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.closeform {
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 5px;
+  padding: 8px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.loginuser:hover {
+  border-color: #646cff;
+}
+.createuser:hover {
+  border-color: #646cff;
+}
+.closeform:hover {
+  border-color: #646cff;
+}
+
+/* Formin tyylittely */
+form {
+  background-color: #009879;
+  color: #ffffff;
+  padding: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  width: 300px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+/* Input kenttien tyylittely */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+/* Koodiesimerkin tyylittely */
+pre {
+  background-color: aliceblue;
+}
+
+#loginResponse,
+#meResponse {
+  font-family: "Courier New", Courier, monospace;
+  font-size: smaller;
+  display: block;
+  width: 100%;
+  word-break: break-all;
+}
+
+.addform {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #551b13;
+}
+
+.addform label {
+  display: inline-block;
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.addform input[type="date"],
+.addform input[type="number"],
+.addform textarea,
+.addform select {
+  width: 250px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.addform textarea {
+  vertical-align: top; /* Align text at the top of the textarea */
+}
+
+.addform button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.addform button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.creatediary {
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 5px;
+  padding: 8px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.clearform {
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 5px;
+  padding: 8px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.clearform:hover {
+  border-color: #646cff;
+}
+.creatediary:hover {
+  border-color: #646cff;
+}
+
+.infodialog {
+  border-radius: 8px;
+  background-color: lightgoldenrodyellow;
+}
+
+.infodialog h4 {
+  font-size: large;
+}
+
+.infodialog p {
+  font-weight: bold;
+}
+
+.close_info {
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 5px;
+  padding: 8px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+/* notes dialogin säännöt*/
+.notes-dialog {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notes-dialog div {
+  text-align: center;
+}
+
+.notes-dialog button:hover {
+  background-color: #75483d;
+}
+
+
+.rivitys p {
+  max-width: 400px;
+  white-space: pre-wrap; /* Handles line breaks and wraps long lines */
+  word-wrap: break-word; /* Handles word wrapping for long words */
+}
+
+.notes-dialog button {
+  position: relative;
+  bottom: 0;
+  left: 45%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  padding: 8px 20px;
+  background-color: #1e1e1f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.minusta {
+  font-size: x-large;
+}
+
+.tietoa {
+  font-size: large;
+}
+
+@media screen and (max-width: 800px) {
+  .forms {
+    flex-direction: column;
+  }
+}

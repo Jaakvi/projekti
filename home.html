@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>Vite App</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about-us.html">About us</a></li>
+      <button style="float: right;" class="logout">Logout</button>
+      <button style="float: right;" class="user_info">User info</button>
+    </ul>
+
+    <div class="user">
+      <b>Olet kirjautunut sisään käyttäjällä:</b> <span id="name">NIMI TÄHÄN</span>
+    </div>
+    <img src="taustakuva8.jpg" alt="stressikuva">
+    <h3>Tässä on yleisimmät stressin aiheuttajat:</h3>
+    <p>
+      1. <b>Työstressi:</b> Työelämän vaatimukset, tiukat aikataulut ja
+      haastavat työympäristöt voivat aiheuttaa stressiä monille. <br />
+      2. <b>Henkilökohtaiset suhteet:</b> Konfliktit perheenjäsenten, ystävien
+      tai kumppanin kanssa voivat olla merkittävä stressin lähde. <br />
+      3. <b>Rahaongelmat:</b> Taloudelliset huolenaiheet, kuten velkaantuminen,
+      asumiskustannusten nousu tai työttömyys, voivat lisätä stressiä. <br />
+      4. <b>Terveysongelmat:</b> Oma tai läheisen sairastuminen,
+      pitkäaikaissairaudet tai terveysongelmat voivat olla merkittävä stressin
+      lähde. <br />
+      5. <b>Muutokset ja epävarmuus:</b> Isojen elämänmuutosten, kuten muuton,
+      avioeron tai työpaikan menettämisen, kohtaaminen voi olla stressaavaa.
+      Epävarmuus tulevaisuudesta tai muutoksista yleisesti voi myös aiheuttaa
+      stressiä.
+      <br />
+      6. <b>Ajanhallinta ja kiire:</b> Jatkuva kiire, aikataulujen puristus ja
+      monien asioiden yhtäaikainen hallinta voivat aiheuttaa stressiä.
+      <br />
+      7. <b>Täydellisyyden tavoittelu:</b> Pyrkimys täydellisyyteen omassa
+      suorituksessa, ulkonäössä tai muissa osa-alueissa voi aiheuttaa stressiä.
+      <br />
+      8. <b>Yleinen elämänkuormitus</b>: Monien eri velvollisuuksien, kuten
+      työn, perhe-elämän, sosiaalisen elämän ja henkilökohtaisten tarpeiden,
+      tasapainottaminen voi olla stressaavaa.
+    </p>
+
+    <dialog id="information" class="infodialog">
+      <p id="userinfo"></p>
+      <button id="closeInfo" class="close_info">Close</button>
+    </dialog>
+
+    <div class="forms">
+      <div style="flex: 1">
+        <h3>Your Diary Entries</h3>
+
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Entry Date</th>
+              <th>Mood</th>
+              <th>Sleep Hours</th>
+              <th>Notes</th>
+              <th>Delete</th>
+              <th>Entry ID</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            <!-- tänne haetaan kaikki käyttäjät -->
+            <!-- # Get all users -->
+            <!-- GET http://127.0.0.1:3000/api/users -->
+          </tbody>
+        </table>
+
+        <button class="get_users">Hae kaikki päiväkirjat</button>
+      </div>
+      <div style="flex: 1">
+        <h3>Add Diary Entry</h3>
+        <form class="addform">
+          <!-- Entry Form -->
+          <label for="entry_date">Entry Date:</label>
+          <input type="date" id="entry_date" name="entry_date" required /><br />
+
+          <label for="mood">Mood:</label>
+          <select id="mood" name="mood" required>
+            <option value="">Select</option>
+            <option value="Happy">Happy</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Sad">Sad</option></select
+          ><br />
+
+          <label for="weight">Weight:</label>
+          <input type="number" id="weight" name="weight" required /><br />
+
+          <label for="sleep_hours">Sleep Hours:</label>
+          <input
+            type="number"
+            id="sleep_hours"
+            name="sleep_hours"
+            required
+          /><br />
+
+          <label for="notes">Notes:</label>
+          <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br />
+
+          <input
+            name="submit"
+            type="submit"
+            value="Tallenna päiväkirja"
+            class="creatediary"
+          />
+          <input
+            name="submit"
+            type="submit"
+            value="Tyhjennä lomake"
+            id="clearbutton"
+            class="clearform"
+          />
+        </form>
+      </div>
+    </div>
+
+    <dialog id="notesDialog" class="notes-dialog">
+      <div class="rivitys">
+        <h4 id="header"></h4>
+          <p id="dialogText"></p>
+      </div>
+      <button id="closeNotes" class="close_notes">Close</button>
+    </dialog>
+
+    <script type="module" src="./start-api-harjoituspohja.js"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>Vite App</title>
+  </head>
+  <body>
+    <ul>
+      <li><p>StressDiary</p></li>
+      <li style="float: right" class="active_login">
+        <button id="loginButton">Login</button>
+      </li>
+    </ul>
+
+    <h1>Tervetuloa StressDiary-sivustolle</h1>
+    <h3>
+      Tietoa sivustosta
+    </h3>
+    <p>
+      StressiPäiväkirja on suunniteltu auttamaan sinua hallitsemaan stressiä ja
+      lisäämään hyvinvointiasi. Haluamme varmistaa, että jokainen päiväsi on
+      mahdollisimman tasapainoinen ja tyydyttävä. <br />
+      Kun avaat StressiPäiväkirjan, huomaat, että käyttöliittymä on jaettu
+      kahteen pääosioon. Vasemmalla reunalla on "Näytä aiemmat merkinnät"
+      -painike. Klikkaamalla tätä painiketta voit tarkastella aiempia
+      päiväkirjamerkintöjäsi. Näin voit palata taaksepäin ja nähdä, miten olet
+      edistynyt ja kehittynyt ajan mittaan. <br />
+      Toisaalta oikealla reunalla on lomake, jonka avulla voit lisätä uusia
+      päiväkirjamerkintöjä. Täytä lomake huolellisesti ja kirjoita vapaasti
+      tunteistasi, ajatuksistasi ja kokemuksistasi. Päiväkirja on tarkoitettu
+      sinulle, joten voit olla täysin avoin ja rehellinen. <br />
+      Kun olet kirjoittanut päiväkirjamerkinnän, voit tallentaa sen ja nähdä sen
+      myöhemmin "Näytä aiemmat merkinnät" -osiossa. Näin voit seurata
+      edistymistäsi ja tunnistaa mahdolliset stressin lähteet.<br>
+    </p>
+
+    <dialog id="loginDialog" class="loginbox">
+      <form class="login_form">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="test" />
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="test" />
+        <input name="submit" type="submit" value="Login" class="loginuser" />
+        <input
+          style="float: right"
+          type="button"
+          id="closeDialogButton"
+          value="Close"
+          class="closeform"
+        />
+      </form>
+      <button id="switchToRegister" class="registerbutton">
+        Register here
+      </button>
+    </dialog>
+    <dialog id="register_dialog" class="registerbox">
+      <form class="create_user_form">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          minlength="3"
+          maxlength="20"
+          required
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="test-pw-update4"
+          minlength="8"
+          required
+        />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="update4@metropolia.fi"
+          minlength="2"
+          required
+        />
+        <input
+          name="submit"
+          type="submit"
+          value="Create User"
+          class="createuser"
+          id="submituser"
+        />
+        <input
+          style="float: right"
+          type="button"
+          id="closeRegisterButton"
+          value="Close"
+          class="closeform"
+        />
+      </form>
+    </dialog>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
