@@ -2,7 +2,7 @@ import "./style.css";
 import { fetchData } from "./fetch.js";
 
 async function getUserID() {
-  const url = "hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
+  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
   const token = localStorage.getItem("token");
 
   const options = {
@@ -85,7 +85,7 @@ allButton.addEventListener("click", getEntries);
 async function getEntries() {
   console.log("Haetaan kaikki entriet");
 
-  const url = "hyte-servu.northeurope.cloudapp.azure.com/api/entries";
+  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/entries";
   let tokeni = localStorage.getItem("token");
 
   const options = {
@@ -193,7 +193,7 @@ function deleteUser(evt) {
 
   const id2 = evt.target.parentElement.nextElementSibling.textContent;
 
-  const url = "hyte-servu.northeurope.cloudapp.azure.com/api/entries" + id;
+  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/entries" + id;
   let tokeni = localStorage.getItem("token");
 
   const options = {
@@ -250,7 +250,7 @@ createDiary.addEventListener("click", async (evt) => {
     clearButton.textContent = "";
   });
 
-  const url = "hyte-servu.northeurope.cloudapp.azure.com/api/entries";
+  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/entries";
   let tokeni = localStorage.getItem("token");
 
   const body = {
@@ -289,7 +289,7 @@ createDiary.addEventListener("click", async (evt) => {
 
 async function showUserName() {
   console.log("Täällä ollaan!");
-  const url = "hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
+  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
   let tokeni = localStorage.getItem("token");
 
   const options = {
@@ -307,7 +307,7 @@ async function showUserName() {
 document.querySelector(".user_info").addEventListener("click", getUserInfo);
 
 async function getUserInfo() {
-  const url = "hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
+  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
   const token = localStorage.getItem("token");
 
   const options = {

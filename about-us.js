@@ -3,7 +3,7 @@ import { fetchData } from "./fetch.js";
 
 async function renderUsername() {
   console.log("Haetaan käyttäjän tiedot");
-  const url = "hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
+  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
   let token = localStorage.getItem("token");
   const options = {
     method: "GET",
@@ -20,7 +20,7 @@ async function renderUsername() {
 document.querySelector(".user_info").addEventListener("click", getUserInfo);
 
 async function getUserInfo() {
-  const url = "hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
+  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/auth/me";
   const token = localStorage.getItem("token");
 
   const options = {

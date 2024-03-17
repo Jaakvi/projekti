@@ -2,16 +2,7 @@ import "./style.css";
 import { fetchData } from "./fetch.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Luo uusi img-elementti
-  const kuva = document.createElement("img");
-
-  // Aseta kuvan lähde (URL)
-  kuva.src = "./taustakuva6.jpg";
-
-  // Lisää kuva ennen h3-elementtiä
-  const otsikko = document.querySelector("h3");
-  otsikko.parentNode.insertBefore(kuva, otsikko);
-
+ 
   // JavaScript code
   document.getElementById("loginButton").addEventListener("click", function () {
     document.getElementById("loginDialog").showModal();
@@ -32,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //   "password": "secret"
     //  }
 
-    const url = "hyte-servu.northeurope.cloudapp.azure.com/api/auth/login";
+    const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/auth/login";
 
     const form = document.querySelector(".login_form");
 
@@ -94,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
   createUser.addEventListener("click", async (evt) => {
     evt.preventDefault();
     console.log("Nyt luodaan käyttäjä");
-    const url = "hyte-servu.northeurope.cloudapp.azure.com/api/users";
+    const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/users";
 
     // # Create user
     // POST http://127.0.0.1:3000/api/users
