@@ -224,6 +224,13 @@ createDiary.addEventListener("click", async (evt) => {
   // content-type: application/json
 
   const form = document.querySelector(".addform");
+
+  if (!form.checkValidity()) {
+    // If the form is not valid, show the validation messages
+    form.reportValidity();
+    return; // Exit function if form is not valid
+  }
+
   const entryDate = form.querySelector("input[name=entry_date]").value;
   const mood = form.querySelector("select[name=mood]").value;
   const weight = form.querySelector("input[name=weight]").value;
@@ -276,7 +283,7 @@ createDiary.addEventListener("click", async (evt) => {
     })
     .catch((error) => {
       console.error("Error:", error);
-      alert("Täytä kaikki kentät!")
+      alert("Täytä kaikki kentät!");
     });
 });
 

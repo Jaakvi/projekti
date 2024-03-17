@@ -11,14 +11,15 @@
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="about-us.html">About us</a></li>
-      <button style="float: right;" class="logout">Logout</button>
-      <button style="float: right;" class="user_info">User info</button>
+      <button style="float: right" class="logout">Logout</button>
+      <button style="float: right" class="user_info">User info</button>
     </ul>
 
     <div class="user">
-      <b>Olet kirjautunut sisään käyttäjällä:</b> <span id="name">NIMI TÄHÄN</span>
+      <b>Olet kirjautunut sisään käyttäjällä:</b>
+      <span id="name">NIMI TÄHÄN</span>
     </div>
-    <img src="taustakuva8.jpg" alt="stressikuva">
+    <img src="taustakuva8.jpg" alt="stressikuva" />
     <h3>Tässä on yleisimmät stressin aiheuttajat:</h3>
     <p>
       1. <b>Työstressi:</b> Työelämän vaatimukset, tiukat aikataulut ja
@@ -91,18 +92,39 @@
           ><br />
 
           <label for="weight">Weight:</label>
-          <input type="number" id="weight" name="weight" required /><br />
+          <input
+            type="number"
+            id="weight"
+            name="weight"
+            placeholder="Must be number"
+            min="30"
+            max="200"
+            required
+          /><br />
 
           <label for="sleep_hours">Sleep Hours:</label>
           <input
             type="number"
             id="sleep_hours"
             name="sleep_hours"
+            placeholder="Must be number"
+            min="0"
+            max="24"
             required
           /><br />
 
           <label for="notes">Notes:</label>
-          <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br />
+          <textarea
+            id="notes"
+            name="notes"
+            rows="4"
+            cols="50"
+            placeholder="Min lenght 3 and max lenght 300 words"
+            minlength="3"
+            maxlength="300"
+            required
+          ></textarea
+          ><br />
 
           <input
             name="submit"
@@ -124,7 +146,7 @@
     <dialog id="notesDialog" class="notes-dialog">
       <div class="rivitys">
         <h4 id="header"></h4>
-          <p id="dialogText"></p>
+        <p id="dialogText"></p>
       </div>
       <button id="closeNotes" class="close_notes">Close</button>
     </dialog>
