@@ -17,6 +17,14 @@ async function renderUsername() {
   });
 }
 
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+
 document.querySelector(".user_info").addEventListener("click", getUserInfo);
 
 async function getUserInfo() {
@@ -32,10 +40,11 @@ async function getUserInfo() {
   fetchData(url, options)
     .then((data) => {
       console.log(data);
-      const info = data.user.username;
+      const info = formatDate(data.user.created_at);
+      const info1 = data.user.username;
       const info2 = data.user.email;
       const info3 = data.user.user_level;
-      infoDialog(info, info2, info3);
+      infoDialog(info, info1, info2, info3);
       // reset form fields after successful submission;
     })
     .catch((error) => {
@@ -43,7 +52,7 @@ async function getUserInfo() {
     });
 }
 
-function infoDialog(info, info2, info3) {
+function infoDialog(info, info1, info2, info3) {
   // Get the dialog and dialog text elements
   const dialog = document.getElementById("information");
   const dialogText = document.getElementById("userinfo");
@@ -53,18 +62,21 @@ function infoDialog(info, info2, info3) {
 
   // Create three paragraph elements
   const information = document.createElement("h4");
+  const created = document.createElement("p");
   const username = document.createElement("p");
   const email = document.createElement("p");
   const user_level = document.createElement("p");
 
   // Set text content for each paragraph
   information.textContent = "User information: ";
-  username.textContent = "Username: " + info;
+  created.textContent = "User created: " + info;
+  username.textContent = "Username: " + info1;
   email.textContent = "Email: " + info2;
   user_level.textContent = "User level: " + info3;
 
   // Append paragraphs to dialog text
   dialogText.appendChild(information);
+  dialogText.appendChild(created);
   dialogText.appendChild(username);
   dialogText.appendChild(email);
   dialogText.appendChild(user_level);

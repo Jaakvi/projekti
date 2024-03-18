@@ -187,13 +187,12 @@ function getUser(evt) {
   console.log(id);
 }
 
-function deleteUser(evt) {
+async function deleteUser(evt) {
   console.log("klikkasit delete nappulaa", evt);
   const id = evt.target.attributes["data-id"].value;
 
-  const id2 = evt.target.parentElement.nextElementSibling.textContent;
-
-  const url = "https://hyte-servu.northeurope.cloudapp.azure.com/api/entries" + id;
+  const url =
+    "https://hyte-servu.northeurope.cloudapp.azure.com/api/entries" + id;
   let tokeni = localStorage.getItem("token");
 
   const options = {
